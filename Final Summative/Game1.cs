@@ -9,7 +9,7 @@ namespace Final_Summative
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
         KeyboardState keyboardState;
-        Texture2D spaceshipTexture;
+        Texture2D spaceshipTexture, spaceBackground;
         Player spaceship;
         enum Screen
         {
@@ -18,6 +18,8 @@ namespace Final_Summative
             game_over,
             game_win
         }
+        Screen screen;
+
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -40,6 +42,7 @@ namespace Final_Summative
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             spaceshipTexture = Content.Load<Texture2D>("spaceshiptexture");
+            spaceBackground = Content.Load<Texture2D>("spacebackground");
         }
 
         protected override void Update(GameTime gameTime)
@@ -66,11 +69,11 @@ namespace Final_Summative
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             _spriteBatch.Begin();
-            if (Screen == Screen.intro)
+            if (screen == Screen.intro)
             {
-
+                _spriteBatch.Draw(spaceBackground,new Rectangle(0, 0, _graphics.PreferredBackBufferWidth, _graphics.PreferredBackBufferHeight), Color.White);
             }
-            else if (Screen == Screen.game)
+            else if (screen == Screen.game)
             {
                 spaceship.Draw(_spriteBatch);
             }
