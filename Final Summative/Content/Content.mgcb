@@ -13,6 +13,13 @@
 
 #---------------------------------- Content ---------------------------------#
 
+#begin 16bitfont.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:16bitfont.spritefont;16bit.spritefont
+
 #begin OldSchoolAdventures-42j9.ttf
 /copy:OldSchoolAdventures-42j9.ttf;16bitfont.ttf
 

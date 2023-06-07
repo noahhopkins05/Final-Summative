@@ -11,6 +11,7 @@ namespace Final_Summative
         KeyboardState keyboardState;
         Texture2D spaceshipTexture, spaceBackground;
         Player spaceship;
+        SpriteFont bitfont;
         enum Screen
         {
             intro,
@@ -43,6 +44,7 @@ namespace Final_Summative
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             spaceshipTexture = Content.Load<Texture2D>("spaceshiptexture");
             spaceBackground = Content.Load<Texture2D>("spacebackground");
+            bitfont = Content.Load<SpriteFont>("16bitfont");
         }
 
         protected override void Update(GameTime gameTime)
